@@ -1,0 +1,84 @@
+# Cifrado y Descifrado de Texto
+
+Este proyecto es una aplicación web simple para cifrar y descifrar texto utilizando un cifrador de tipo sustitución basado en un alfabeto modificado. La aplicación también permite copiar el texto cifrado o descifrado al portapapeles y limpiar el área de salida.
+
+## Funcionalidades
+
+1. **Cifrar Texto:** 
+   - Convierte el texto de entrada en un formato cifrado utilizando un alfabeto de sustitución.
+   
+2. **Descifrar Texto:** 
+   - Convierte el texto cifrado de vuelta a su formato original.
+
+3. **Copiar Texto:**
+   - Permite copiar el texto cifrado o descifrado al portapapeles.
+
+4. **Limpiar Texto:**
+   - Limpia el contenido del área de texto de salida.
+
+## Código
+
+### Definición de Variables
+
+- `abecedario`: Una cadena que contiene el alfabeto en minúsculas, incluyendo la letra ñ.
+- `parte1`: La primera mitad del alfabeto, incluyendo la ñ.
+- `parte2`: La segunda mitad del alfabeto en orden inverso, con la ñ al final.
+
+### Funciones
+
+#### `cifrar(letra)`
+
+Esta función toma una letra como entrada y devuelve su correspondiente letra cifrada basada en el alfabeto modificado. Si la letra no está en el alfabeto, se devuelve tal cual.
+
+#### `descifrar(letra)`
+
+Esta función toma una letra cifrada y devuelve la letra original utilizando el alfabeto modificado. Si la letra no está en el alfabeto, se devuelve tal cual.
+
+#### `obtenerText()`
+
+Obtiene el texto de entrada del `<textarea>` con el id `inputText`, lo cifra utilizando la función `cifrar`, y muestra el texto cifrado en el `<textarea>` con el id `outputText`. También actualiza la visibilidad del `placeholder`.
+
+#### `obtener()`
+
+Obtiene el texto de entrada del `<textarea>` con el id `inputText`, lo descifra utilizando la función `descifrar`, y muestra el texto descifrado en el `<textarea>` con el id `outputText`. También actualiza la visibilidad del `placeholder`.
+
+#### `copiarTexto()`
+
+Selecciona y copia el contenido del `<textarea>` con el id `outputText` al portapapeles. Muestra una alerta con el texto copiado o un mensaje de error en caso de fallo.
+
+#### `limpiar()`
+
+Limpia el contenido del `<textarea>` con el id `outputText` y muestra el `placeholder` si el área de texto está vacío.
+
+#### `actualizarPlaceholder(textarea)`
+
+Actualiza la visibilidad del `placeholder` en función del contenido del `<textarea>`.
+
+### Eventos
+
+- **`focus` en `textarea`:** Oculta el `placeholder` cuando el área de texto está enfocado.
+- **`blur` en `textarea`:** Muestra el `placeholder` si el área de texto está vacío al perder el foco.
+- **`load` en `window`:** Muestra el `placeholder` si el área de texto está vacío cuando se carga la página.
+
+## Uso
+
+1. **Ingresar Texto:**
+   - Introduzca el texto que desea cifrar en el área de texto de entrada.
+
+2. **Cifrar o Descifrar:**
+   - Haga clic en el botón "Encriptar" para cifrar el texto o en "Desencriptar" para descifrarlo.
+
+3. **Copiar Texto:**
+   - Haga clic en el botón "Copiar" para copiar el texto cifrado o descifrado al portapapeles.
+
+4. **Limpiar Texto:**
+   - Haga clic en el botón "X" para limpiar el contenido del área de texto de salida.
+
+## Notas
+
+- Este código está diseñado para trabajar con letras minúsculas sin acentos. La letra 'ñ' está incluida en el alfabeto.
+- La aplicación utiliza la API moderna del portapapeles para copiar el texto.
+
+---
+
+Para más información o para contribuir al proyecto, consulte el archivo de contribuciones.
